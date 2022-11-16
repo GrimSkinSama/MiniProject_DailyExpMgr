@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "ef460d8d-dce9-4707-8d81-b578d0fd4338",
+		"name": "Mini Project - Daily Expense Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9400666"
+	},
+	"item": [
+		{
+			"name": "Income",
+			"item": [
+				{
+					"name": "GET All Income",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/income/incomes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"incomes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add New Income",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"income_category_id\":\"1\",\r\n    \"amount\":\"10000\",\r\n    \"description\":\"Jualan Siomay AYAM\",\r\n    \"income_date\":\"2022-11-15\",\r\n    \"income_balance\":\"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/income/addIncome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"addIncome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Income By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"income_category_id\":\"1\",\r\n    \"amount\":\"10000\",\r\n    \"description\":\"Jualan Siomay\",\r\n    \"income_date\":\"2022-11-15\",\r\n    \"income_balance\":\"10000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/income/updateIncome/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"updateIncome",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL Delete Income By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/income/deleteIncome/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"deleteIncome",
+								"6"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Income By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/income/income/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"income",
+								"income",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IncomeCategory",
+			"item": [
+				{
+					"name": "GET All Income Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/incomeCategory/incomeCategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"incomeCategory",
+								"incomeCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add New Income Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"Untuk di Hapus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/incomeCategory/addIncomeCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"incomeCategory",
+								"addIncomeCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Income Category By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"Penjualan Harian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/incomeCategory/updateIncomeCategory/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"incomeCategory",
+								"updateIncomeCategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL Delete Income Category By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/incomeCategory/deleteIncomeCategory/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"incomeCategory",
+								"deleteIncomeCategory",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Income Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/incomeCategory/incomeCategory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"incomeCategory",
+								"incomeCategory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "GET All Expense",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add New Expense",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":\"5000\",\r\n    \"description\":\"Hapus Aku\",\r\n    \"expense_date\":\"2022-11-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense/addExpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"addExpense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Expense By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense/expense/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"expense",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Expense By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":\"10000\",\r\n    \"description\":\"Pulpy Orange\",\r\n    \"expense_date\":\"2022-11-16\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense/updateExpense/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"updateExpense",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL Delete Expense By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense/deleteExpense/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"deleteExpense",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ExpenseCategory",
+			"item": [
+				{
+					"name": "GET All Expense Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expenseCategory/expenseCategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenseCategory",
+								"expenseCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add Expense Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"Untuk di Delete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expenseCategory/addExpenseCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenseCategory",
+								"addExpenseCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Expense Category By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expenseCategory/expenseCategory/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenseCategory",
+								"expenseCategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Expense Category By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"Listrik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expenseCategory/updateExpenseCategory/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenseCategory",
+								"updateExpenseCategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL Delete Expense Category By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expenseCategory/deleteExpenseCategory/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expenseCategory",
+								"deleteExpenseCategory",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
