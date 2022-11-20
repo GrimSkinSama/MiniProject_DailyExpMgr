@@ -1,7 +1,17 @@
 table{
     width: 100%;
+    font-size: large;
 }
 
-#to-update{
+.to-update{
     cursor:pointer;
+}
+
+.to-update:hover{
+    background-color: bisque;
+    cursor: pointer;
+}
+
+i:hover{
+    color: red;
 }

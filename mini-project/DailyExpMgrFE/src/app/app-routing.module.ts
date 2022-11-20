@@ -12,8 +12,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'add-income', component: IncomeComponent},
   {path: 'add-expense', component: ExpenseComponent},
-  {path: 'edit-income', component: UpdateIncomeComponent},
-  {path: 'edit-expense', component: UpdateExpenseComponent},
+  {path: 'edit-income/:id', component: UpdateIncomeComponent},
+  {path: 'edit-expense/:id', component: UpdateExpenseComponent},
   {path: '',redirectTo: '/login',pathMatch:'full'}
 ];
 
