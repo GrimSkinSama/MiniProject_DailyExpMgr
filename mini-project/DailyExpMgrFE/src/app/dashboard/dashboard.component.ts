@@ -10,12 +10,10 @@ import { IncomeService } from '../service/income.service';
 export class DashboardComponent implements OnInit {
   incomes: Money[] = [];
 
-
-
   constructor(private incomeService: IncomeService) { }
 
   ngOnInit(): void {
-    this.getIncomes
+    this.getIncomes()
   }
 
   getIncomes():void{
