@@ -35,7 +35,7 @@ export class ExpenseService {
     return this.http.get<Category>(urlByID);
   }
 
-  getTotalExpense(){
+  getTotalExpense(): Observable<Total>{
     return this.http.get<Total>(this.urlGetTotalExpense);
   }
 

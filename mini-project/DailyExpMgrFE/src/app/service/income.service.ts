@@ -40,7 +40,7 @@ export class IncomeService {
     return this.http.get<Category>(urlByID);
   }
 
-  getTotalIncome(){
+  getTotalIncome(): Observable<Total>{
     return this.http.get<Total>(this.urlGetTotalIncome);
   }
 

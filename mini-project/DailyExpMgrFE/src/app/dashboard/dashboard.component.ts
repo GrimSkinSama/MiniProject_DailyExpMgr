@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Category, Money } from 'src/model/money';
+import { Category, Money, Total } from 'src/model/money';
 import { ExpenseService } from '../service/expense.service';
 import { IncomeService } from '../service/income.service';
 
@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
 
   categories: Category[] = [];
 
+  totalinc: Total | undefined;
+  totalexp: Total|undefined;
+
   constructor(
     private incomeService: IncomeService,
     private expenseService: ExpenseService,
@@ -27,6 +30,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getIncomes();
     this.getExpenses();
+
+    this.getTotalIncomes();
+    this.getTotalExpenses();
   }
 
   getIncomes(): void{
@@ -55,7 +61,14 @@ export class DashboardComponent implements OnInit {
     alert("Your Input Has been Succesfully Deleted")
   }
 
+
+  getTotalIncomes(): void{
+    this.incomeService.getTotalIncome().subscribe(a => this.totalinc = a);
+  }
   
+  getTotalExpenses(): void{
+    this.expenseService.getTotalExpense().subscribe(a => this.totalexp = a);
+  }
 
 
 
