@@ -25,7 +25,7 @@ export class UpdateExpenseComponent implements OnInit {
     {
       this.moneyFormGroup = this.formBuilder.group({
         date: new FormControl(''),
-        category_id: new FormControl(''),
+        category: new FormControl(''),
         amount: new FormControl(0),
         description: new FormControl('')
       });
@@ -49,7 +49,7 @@ export class UpdateExpenseComponent implements OnInit {
     console.log(this.idParams);
     this.expenseServices.getExpense(this.idParams).subscribe(expense => {
       this.moneyFormGroup.get('date')?.setValue(expense.date);
-      this.moneyFormGroup.get('category_id')?.setValue(expense.category_id);
+      this.moneyFormGroup.get('category')?.setValue(expense.category);
       this.moneyFormGroup.get('amount')?.setValue(expense.amount);
       this.moneyFormGroup.get('description')?.setValue(expense.description);
       this.money = expense;
@@ -58,7 +58,7 @@ export class UpdateExpenseComponent implements OnInit {
 
   updateExpense(
     date: string = this.moneyFormGroup.get('date')?.value,
-    category_id: number = this.moneyFormGroup.get('category_id')?.value,
+    category: number = this.moneyFormGroup.get('category')?.value,
     amount: string = this.moneyFormGroup.get('amount')?.value,
     description: string = this.moneyFormGroup.get('description')?.value
     ): void{

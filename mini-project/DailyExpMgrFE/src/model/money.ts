@@ -1,9 +1,17 @@
+// export interface Money {
+//     id: number;
+//     category_id:number;
+//     amount: number;
+//     description: string;
+//     date: string;
+// }
+
 export interface Money {
-    id: number;
-    category_id:number;
-    amount: number;
-    description: string;
-    date: string;
+  id: number;
+  category:string;
+  amount: number;
+  description: string;
+  date: string;
 }
 
 export class MoneyModel {
@@ -22,4 +30,11 @@ export interface Category{
 
 export interface Total{
   total:number;
+}
+
+
+export class CategoryModel {
+  constructor(
+    public category_name: string
+  ){}
 }

@@ -30,11 +30,18 @@ public class IncomeCategoryService implements IIncomeCategoryService{
 
     @Override
     public IncomeCategory findTheIncome(IncomeCategory incomeCategory) {
+
         return null;
     }
 
     @Override
     public List<IncomeCategory> allIncome() {
         return null;
+    }
+
+    public IncomeCategory findCategoryById(Integer catId){
+        System.out.println(catId);
+        System.out.println(incomeCategoryRepository.findIncomeCategoryById(catId).getCategory_name());
+        return incomeCategoryRepository.findIncomeCategoryById(catId);
     }
 }

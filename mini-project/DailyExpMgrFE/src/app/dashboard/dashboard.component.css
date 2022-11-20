@@ -3,6 +3,14 @@ table{
     font-size: large;
 }
 
+tr{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+}
+
 .to-update{
     cursor:pointer;
 }

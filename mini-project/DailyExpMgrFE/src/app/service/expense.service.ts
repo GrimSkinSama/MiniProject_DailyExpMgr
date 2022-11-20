@@ -16,6 +16,8 @@ export class ExpenseService {
   private urlDeleteExpense: string = 'http://localhost:8080/expense/deleteExpense';
   private urlGetTotalExpense: string = 'http://localhost:8080/expense/totalExpense';
 
+  private urlAddExpenseCategory: string = 'http://localhost:8080/expenseCategory/addExpenseCategory';
+
 
   constructor(private http:HttpClient) { }
   httpOptions = {
@@ -54,5 +56,9 @@ export class ExpenseService {
 
   deleteExpense(id:Number): Observable<Money>{
     return this.http.delete<Money>(`${this.urlDeleteExpense}/${id}`, this.httpOptions)
+  }
+
+  addExpenseCategory(category: Category): Observable<Category>{
+    return this.http.post<Category>(this.urlAddExpenseCategory, category, this.httpOptions);
   }
 }

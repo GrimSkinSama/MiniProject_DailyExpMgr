@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
 
   deleteExpense(id:number):void{
     this.expenseService.deleteExpense(id).subscribe(() => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['../dashboard']);
     });
     alert("Your Input Has been Succesfully Deleted")
   }

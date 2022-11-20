@@ -1,7 +1,9 @@
 package miniproject.bca.co.id.DailyExpenseManager.controller;
 
 import miniproject.bca.co.id.DailyExpenseManager.model.Income;
+import miniproject.bca.co.id.DailyExpenseManager.model.IncomeJSON;
 import miniproject.bca.co.id.DailyExpenseManager.repository.IncomeRepository;
+import miniproject.bca.co.id.DailyExpenseManager.service.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +17,16 @@ public class IncomeController {
     @Autowired
     IncomeRepository incomeRepository;
 
+    @Autowired
+    IncomeService incomeService;
+
+//    @GetMapping("/incomes")
+//    public List<Income> findAll(){return incomeRepository.findAll();}
+
     @GetMapping("/incomes")
-    public List<Income> findAll(){return incomeRepository.findAll();}
+    public List<IncomeJSON> findAll(){
+        return incomeService.allIncomeJSON();
+    }
 
 
     @GetMapping("income/{id}")

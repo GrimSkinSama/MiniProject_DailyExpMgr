@@ -1,7 +1,9 @@
 package miniproject.bca.co.id.DailyExpenseManager.controller;
 
 import miniproject.bca.co.id.DailyExpenseManager.model.Expense;
+import miniproject.bca.co.id.DailyExpenseManager.model.ExpenseJSON;
 import miniproject.bca.co.id.DailyExpenseManager.repository.ExpenseRepository;
+import miniproject.bca.co.id.DailyExpenseManager.service.ExpenseSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +16,17 @@ public class ExpenseController {
     @Autowired
     ExpenseRepository expenseRepository;
 
+    @Autowired
+    ExpenseSevice expenseSevice;
+
+//    @GetMapping("/expenses")
+//    public List<Expense> findAllExpenses(){
+//        return expenseRepository.findAll();
+//    }
+
     @GetMapping("/expenses")
-    public List<Expense> findAllExpenses(){
-        return expenseRepository.findAll();
+    public List<ExpenseJSON> findAllExpenses(){
+        return expenseSevice.allExpenseJSON();
     }
 
     @GetMapping("/totalExpense")

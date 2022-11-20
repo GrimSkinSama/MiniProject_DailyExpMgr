@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Money, MoneyModel } from 'src/model/money';
+import { Category, Money, MoneyModel } from 'src/model/money';
 import { ExpenseService } from '../service/expense.service';
 
 @Component({
@@ -14,7 +14,10 @@ export class ExpenseComponent implements OnInit {
   moneys: Money[] = [];
   money: Money | undefined;
   moneyFormGroup: FormGroup;
+  catFormGroup: FormGroup;
   idParams: number = 0;
+
+  expCat: Category[] = [];
 
   constructor(
     private expenseServices: ExpenseService,
@@ -27,6 +30,10 @@ export class ExpenseComponent implements OnInit {
         amount: new FormControl(0),
         description: new FormControl('')
       });
+
+      this.catFormGroup = this.formBuilder.group({
+        category_name: new FormControl('')
+      });
   }
 
   moneyModel = new MoneyModel(0,0,'','');
@@ -34,6 +41,7 @@ export class ExpenseComponent implements OnInit {
 
   ngOnInit(): void {
     this.submitted=false;
+    this.getCategories();
   }
 
   onSubmit(){
@@ -63,5 +71,28 @@ export class ExpenseComponent implements OnInit {
 
       this.router.navigate(["dashboard"]);
   }
+
+  getCategories(): void{
+    this.expenseServices.getExpenseCategories().subscribe(a => this.expCat = a);
+  }
+
+  submitCategory(){
+    this.submitted = true;
+    this.addExpenseCategory();
+  }
+
+  addExpenseCategory(category_name: string = this.catFormGroup.get('category_name')?.value): void{
+      console.log(this.catFormGroup.value);
+      this.expenseServices.addExpenseCategory(
+        {
+          id: this.idParams,
+          ...this.catFormGroup.value
+        } as Category)
+      .subscribe(a => {this.expCat.push(a)})
+
+      alert ("Your Expense Category has been Successfully Inputted !");
+      this.router.navigate(["dashboard"]);
+  }
+
 
 }

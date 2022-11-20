@@ -12,17 +12,18 @@
         <table>
             <tr>
                 <th>ID.</th>
-                <th>Category ID</th>
+                <th>Category</th>
                 <th>Amount</th>
                 <th>Description</th>
                 <th>Income Date</th>
+                <th>delete data</th>
             </tr>
-            <tr class="to-update" *ngFor="let money of incomes" cursor:pointer routerLink="/edit-income/{{money.id}}">
-                <td>{{money.id}}</td>
-                <td>{{money.category_id}}</td>
-                <td>{{money.amount}}</td>
-                <td>{{money.description}}</td>
-                <td>{{money.date}}</td>
+            <tr class="to-update" *ngFor="let money of incomes" >
+                <td routerLink="/edit-income/{{money.id}}">{{money.id}}</td>
+                <td routerLink="/edit-income/{{money.id}}">{{money.category}}</td>
+                <td routerLink="/edit-income/{{money.id}}">{{money.amount}}</td>
+                <td routerLink="/edit-income/{{money.id}}">{{money.description}}</td>
+                <td routerLink="/edit-income/{{money.id}}">{{money.date}}</td>
                 <i class="card-action" (click)="deleteIncome(money.id)">X</i>
             </tr>
         </table>
@@ -38,17 +39,18 @@
         <table>
             <tr>
                 <th>ID.</th>
-                <th>Category ID</th>
+                <th>Category</th>
                 <th>Amount</th>
                 <th>Description</th>
                 <th>Income Date</th>
+                <th>delete data</th>
             </tr>
-            <tr class="to-update" *ngFor="let money of expenses" routerLink="/edit-expense/{{money.id}}">
-                <td>{{money.id}}</td>
-                <td>{{money.category_id}}</td>
-                <td>{{money.amount}}</td>
-                <td>{{money.description}}</td>
-                <td>{{money.date}}</td>
+            <tr *ngFor="let money of expenses" class="to-update">
+                    <td  routerLink="/edit-expense/{{money.id}}">{{money.id}}</td>
+                    <td  routerLink="/edit-expense/{{money.id}}">{{money.category}}</td>
+                    <td  routerLink="/edit-expense/{{money.id}}">{{money.amount}}</td>
+                    <td  routerLink="/edit-expense/{{money.id}}">{{money.description}}</td>
+                    <td  routerLink="/edit-expense/{{money.id}}">{{money.date}}</td>
                 <i class="card-action" (click)="deleteExpense(money.id)">X</i>
             </tr>
         </table>
