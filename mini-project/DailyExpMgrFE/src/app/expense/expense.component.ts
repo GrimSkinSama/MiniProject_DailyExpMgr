@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Money, MoneyModel } from 'src/model/money';
 import { ExpenseService } from '../service/expense.service';
@@ -17,6 +18,7 @@ export class ExpenseComponent implements OnInit {
 
   constructor(
     private expenseServices: ExpenseService,
+    private router: Router,
     private formBuilder: FormBuilder) 
     {
       this.moneyFormGroup = this.formBuilder.group({
@@ -56,6 +58,10 @@ export class ExpenseComponent implements OnInit {
           ...this.moneyFormGroup.value
         } as Money)
       .subscribe(a => {this.moneys.push(a)})
+
+      alert ("Your Expense has Successfully Inputted !")
+
+      this.router.navigate(["dashboard"]);
   }
 
 }

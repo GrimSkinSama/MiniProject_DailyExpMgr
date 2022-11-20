@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Form,FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Money, MoneyModel } from 'src/model/money';
 import { IncomeService } from '../service/income.service';
 
@@ -16,6 +17,7 @@ export class IncomeComponent implements OnInit {
 
   constructor(
     private incomeServices: IncomeService,
+    private router: Router,
     private formBuilder: FormBuilder) 
     {
       this.moneyFormGroup = this.formBuilder.group({
@@ -55,6 +57,10 @@ export class IncomeComponent implements OnInit {
           ...this.moneyFormGroup.value
         } as Money)
       .subscribe(a => {this.moneys.push(a)})
+
+      alert ("Your Income has Successfully Inputted !")
+
+      this.router.navigate(["dashboard"]);
   }
 
 }
