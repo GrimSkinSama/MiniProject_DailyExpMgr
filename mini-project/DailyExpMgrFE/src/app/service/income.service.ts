@@ -12,9 +12,8 @@ export class IncomeService {
   private urlGetIncomeByID: string = 'http://localhost:8080/income/income';
   private urlGetIncomeCategory: string = 'http://localhost:8080/incomeCategory/incomeCategories';
   private urlAddIncome: string = 'http://localhost:8080/income/addIncome';
-  private urlUpdateIncome: string = 'http://localhost:8080/income/updateIncome/1';
-
-  private urlDeleteIncome: string = 'http://localhost:8080/income/deleteIncome/6';
+  private urlUpdateIncome: string = 'http://localhost:8080/income/updateIncome';
+  private urlDeleteIncome: string = 'http://localhost:8080/income/deleteIncome';
 
   constructor(private http:HttpClient) { }
   httpOptions = {
@@ -34,11 +33,11 @@ export class IncomeService {
     return this.http.post<Money>(this.urlAddIncome, money, this.httpOptions);
   }
 
-  // updatePartner(partner:Partner): Observable<Partner>{
-  //   return this.http.put<Partner>(`${this.url}/${partner.id}`, partner, this.httpOptions)
-  // }
+  updateIncome(money:Money): Observable<Money>{
+    return this.http.put<Money>(`${this.urlUpdateIncome}/${money.id}`, money, this.httpOptions)
+  }
 
-  // deletePartner(id:Number): Observable<Partner>{
-  //   return this.http.delete<Partner>(`${this.url}/${id}`, this.httpOptions)
-  // }
+  deleteIncome(id:Number): Observable<Money>{
+    return this.http.delete<Money>(`${this.urlDeleteIncome}/${id}`, this.httpOptions)
+  }
 }

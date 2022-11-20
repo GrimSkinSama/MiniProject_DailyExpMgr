@@ -8,17 +8,21 @@ import { IncomeService } from '../service/income.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  incomes: Money[] = [];
+  moneys: Money[] = [];
 
   constructor(private incomeService: IncomeService) { }
 
   ngOnInit(): void {
-    this.getIncomes()
+    this.getIncomes();
   }
 
   getIncomes():void{
-    this.incomeService.getIncomes().subscribe(a => this.incomes = a)
+    this.incomeService.getIncomes().subscribe(a => this.moneys = a);
   }
+
+  // getExpenses(): void{
+    
+  // }
 
 
 
