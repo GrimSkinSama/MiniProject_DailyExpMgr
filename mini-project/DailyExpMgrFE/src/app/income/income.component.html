@@ -3,15 +3,15 @@
         <h2>Add Income</h2>
         <form (ngSubmit)="onSubmit()" [formGroup]="moneyFormGroup">
             <div class="">
-                <label>Date</label>
-                <input type="text" name="date" formControlName="date">
-                <div [hidden]="moneyFormGroup.get('date')?.valid || moneyFormGroup.get('date')?.pristine" class="alert alert-danger"> Date cannot be empty
+                <label>income_date</label>
+                <input type="text" name="income_date" formControlName="income_date">
+                <div [hidden]="moneyFormGroup.get('income_date')?.valid || moneyFormGroup.get('income_date')?.pristine" class="alert alert-danger"> income_date cannot be empty
                 </div>
             </div>
             <div class="">
-                <label>Category</label>
-                <input type="text" name="category" formControlName="category">
-                <div [hidden]="moneyFormGroup.get('category')?.valid || moneyFormGroup.get('category')?.pristine" class="alert alert-danger"> Category can not be empty
+                <label>income_category_id</label>
+                <input type="text" name="income_category_id" formControlName="income_category_id">
+                <div [hidden]="moneyFormGroup.get('income_category_id')?.valid || moneyFormGroup.get('income_category_id')?.pristine" class="alert alert-danger"> income_category_id can not be empty
                 </div>
             </div>
             <div class="">
@@ -23,7 +23,7 @@
             <div class="">
                 <label>Description</label>
                 <input type="text" name="description" formControlName="description">
-                <div [hidden]="moneyFormGroup.get('description')?.valid || moneyFormGroup.get('notes')?.pristine" class="alert alert-danger"> Description cannot be empty
+                <div [hidden]="moneyFormGroup.get('description')?.valid || moneyFormGroup.get('description')?.pristine" class="alert alert-danger"> Description cannot be empty
                 </div>
             </div>
 

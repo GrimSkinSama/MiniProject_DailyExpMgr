@@ -19,10 +19,10 @@ export class IncomeComponent implements OnInit {
     private formBuilder: FormBuilder) 
     {
       this.moneyFormGroup = this.formBuilder.group({
-        date: new FormControl(''),
-        category: new FormControl(''),
+        income_date: new FormControl(''),
+        income_category_id: new FormControl(''),
         amount: new FormControl(0),
-        notes: new FormControl('')
+        description: new FormControl('')
       });
   }
 
@@ -39,15 +39,15 @@ export class IncomeComponent implements OnInit {
   }
 
   addIncome(
-    date: string = this.moneyFormGroup.get('date')?.value,
-    category: string = this.moneyFormGroup.get('category')?.value,
+    income_date: string = this.moneyFormGroup.get('income_date')?.value,
+    income_category_id: number = this.moneyFormGroup.get('income_category_id')?.value,
     amount: string = this.moneyFormGroup.get('amount')?.value,
-    notes: string = this.moneyFormGroup.get('notes')?.value
+    description: string = this.moneyFormGroup.get('description')?.value
     ): void{
       console.log(this.moneyFormGroup.value);
       
-      category = category.trim();
-      notes = notes.trim();
+      //category = category.trim();
+      //description = description.trim();
 
       this.incomeServices.addIncome(
         {
