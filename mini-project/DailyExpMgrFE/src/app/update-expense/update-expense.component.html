@@ -1,5 +1,5 @@
 <div class="container xls">
-    <h2>Add Expense</h2>
+    <h2 class="justify-content-center">Update Expense</h2>
     <hr>
     <div [hidden]="submitted">
         <form (ngSubmit)="onSubmit()" [formGroup]="moneyFormGroup">
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Expense Amount</label>
+                <label>Amount</label>
                 <input type="text" name="amount" formControlName="amount" class="form-control">
                 <div [hidden]="moneyFormGroup.get('amount')?.valid || moneyFormGroup.get('amount')?.pristine" class="alert alert-danger"> Amount cannot be empty
                 </div>

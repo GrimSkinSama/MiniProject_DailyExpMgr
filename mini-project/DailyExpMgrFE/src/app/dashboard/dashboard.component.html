@@ -5,7 +5,6 @@
         <button class="btn btn-secondary" style="display: inline-block; margin-left: 5%;" routerLink="">Logout</button>
     </span>
     <hr>
-    <!-- put data here -->
 
     <div class="container">
         <h4>List of Incomes</h4>
@@ -18,26 +17,16 @@
                 <th>Description</th>
                 <th>Income Date</th>
             </tr>
-            <tr *ngFor="let money of incomes">
+            <tr class="to-update" *ngFor="let money of incomes" cursor:pointer routerLink="/edit-income/{{money.id}}">
                 <td>{{money.id}}</td>
                 <td>{{money.category_id}}</td>
                 <td>{{money.amount}}</td>
                 <td>{{money.description}}</td>
                 <td>{{money.date}}</td>
+                <i class="card-action" (click)="deleteIncome(money.id)">X</i>
             </tr>
         </table>
     </div>
-
-
-    <!-- <div *ngFor="let money of incomes">
-        <p>{{money.id}}</p>
-        <p>{{money.category_id}}</p>
-        <p>{{money.amount}}</p>
-        <p>{{money.description}}</p>
-        <p>{{money.date}}</p>
-    </div> -->
-
-    <!-- <hr> -->
  
     <div class="container" style="margin-top: 8%;">
         <h4>List of Expenses</h4>
@@ -50,24 +39,16 @@
                 <th>Description</th>
                 <th>Income Date</th>
             </tr>
-            <tr *ngFor="let money of expenses">
+            <tr class="to-update" *ngFor="let money of expenses" routerLink="/edit-expense/{{money.id}}">
                 <td>{{money.id}}</td>
                 <td>{{money.category_id}}</td>
                 <td>{{money.amount}}</td>
                 <td>{{money.description}}</td>
                 <td>{{money.date}}</td>
+                <i class="card-action" (click)="deleteExpense(money.id)">X</i>
             </tr>
         </table>
     </div>
-
-
-    <!-- <div *ngFor="let money of expenses">
-        <p>{{money.category_id}}</p>
-        <p>{{money.amount}}</p>
-        <p>{{money.description}}</p>
-        <p>{{money.date}}</p>
-    </div> -->
-    
     
     <div class="container" style="margin-top: 8%; margin-left: 30%;">
         <button routerLink="/add-income" class="btn btn-primary" style="margin-right: 3%;">Add Income</button>

@@ -9,6 +9,8 @@ import { ExpenseComponent } from './expense/expense.component';
 import { IncomeComponent } from './income/income.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateIncomeComponent } from './update-income/update-income.component';
+import { UpdateExpenseComponent } from './update-expense/update-expense.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     LoginComponent,
     IncomeComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    UpdateIncomeComponent,
+    UpdateExpenseComponent
   ],
   imports: [
     BrowserModule,

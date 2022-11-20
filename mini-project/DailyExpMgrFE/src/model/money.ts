@@ -11,8 +11,11 @@ export class MoneyModel {
       public category_id:number,
       public amount: number,
       public description: string,
-      public date: string,
-      public type: string
+      public date: string
     ){ }
 }
 
+export interface Category{
+  id: number;
+  category_name: string;
+}

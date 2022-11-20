@@ -28,7 +28,7 @@ export class IncomeComponent implements OnInit {
       });
   }
 
-  moneyModel = new MoneyModel(0,0,'','','income');
+  moneyModel = new MoneyModel(0,0,'','');
   submitted = false;
 
   ngOnInit(): void {
@@ -43,13 +43,13 @@ export class IncomeComponent implements OnInit {
   addIncome(
     date: string = this.moneyFormGroup.get('date')?.value,
     category_id: number = this.moneyFormGroup.get('category_id')?.value,
-    amount: string = this.moneyFormGroup.get('amount')?.value,
+    amount: number = this.moneyFormGroup.get('amount')?.value,
     description: string = this.moneyFormGroup.get('description')?.value
     ): void{
       console.log(this.moneyFormGroup.value);
       
       //category = category.trim();
-      //description = description.trim();
+      description = description.trim();
 
       this.incomeServices.addIncome(
         {
@@ -58,7 +58,7 @@ export class IncomeComponent implements OnInit {
         } as Money)
       .subscribe(a => {this.moneys.push(a)})
 
-      alert ("Your Income has Successfully Inputted !")
+      alert ("Your Income has been Successfully Inputted !")
 
       this.router.navigate(["dashboard"]);
   }
