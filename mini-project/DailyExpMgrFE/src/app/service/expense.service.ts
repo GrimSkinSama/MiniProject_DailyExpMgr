@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category, Money, Total } from 'src/model/money';
+import { Category, Money, MoneyModel, Total } from 'src/model/money';
 
 @Injectable({
   providedIn: 'root'
@@ -41,9 +41,9 @@ export class ExpenseService {
     return this.http.get<Total>(this.urlGetTotalExpense);
   }
 
-  getExpense(id:number): Observable<Money>{
+  getExpense(id:number): Observable<MoneyModel>{
     const urlByID = `${this.urlGetExpenseByID}/${id}`
-    return this.http.get<Money>(urlByID);
+    return this.http.get<MoneyModel>(urlByID);
   }
 
   addExpense(money:Money): Observable<Money>{

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Money,Category, Total } from 'src/model/money';
+import { Money,Category, Total, MoneyModel } from 'src/model/money';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,9 @@ export class IncomeService {
     return this.http.get<Money[]>(this.urlGetIncome);
   }
 
-  getIncome(id:number): Observable<Money>{
+  getIncome(id:number): Observable<MoneyModel>{
     const urlByID = `${this.urlGetIncomeByID}/${id}`
-    return this.http.get<Money>(urlByID);
+    return this.http.get<MoneyModel>(urlByID);
   }
 
   getIncomeCategories(): Observable<Category[]>{
