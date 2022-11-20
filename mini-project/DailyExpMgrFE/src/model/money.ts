@@ -12,5 +12,7 @@ export class MoneyModel {
       public amount: number,
       public description: string,
       public date: string,
+      public type: string
     ){ }
 }
+

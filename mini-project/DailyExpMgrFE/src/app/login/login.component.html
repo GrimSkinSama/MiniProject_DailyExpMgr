@@ -1,7 +1,21 @@
-<h2>Welcome to Daily Expense Manager</h2>
-<p>Username: </p>
-<input type="text">
-<p>Password: </p>
-<input type="password">
-<br>
-<button routerLink="/dashboard">Login</button>
+<div class="container">
+    <div class="">
+        <h2>Welcome to Daily Expense Manager</h2>
+    </div>
+    <hr>
+
+    <div class="container row" style="width: 30%;">
+        <div class="col">
+            <label>Username: </label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col">
+            <label>Password: </label>
+            <input type="password" class="form-control">
+        </div>
+        
+        <div style="margin-top: 5%;">
+            <button class="btn btn-submit" style="width: 100%;" routerLink="/dashboard">Login</button>
+        </div>
+    </div>
+</div>

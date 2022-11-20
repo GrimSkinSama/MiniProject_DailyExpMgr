@@ -27,7 +27,7 @@ export class ExpenseComponent implements OnInit {
       });
   }
 
-  moneyModel = new MoneyModel(0,0,'','');
+  moneyModel = new MoneyModel(0,0,'','','expense');
   submitted = false;
 
   ngOnInit(): void {

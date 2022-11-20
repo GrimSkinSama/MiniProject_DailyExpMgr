@@ -1,32 +1,33 @@
-<div>
+<div class="container xls">
+    <h2>Add Expense</h2>
+    <hr>
     <div [hidden]="submitted">
-        <h2>Add Expense</h2>
         <form (ngSubmit)="onSubmit()" [formGroup]="moneyFormGroup">
-            <div class="">
-                <label>date</label>
-                <input type="text" name="date" formControlName="date">
+            <div class="form-group">
+                <label>Expense Date</label>
+                <input type="text" name="date" formControlName="date" class="form-control">
                 <div [hidden]="moneyFormGroup.get('date')?.valid || moneyFormGroup.get('date')?.pristine" class="alert alert-danger"> Date cannot be empty
                 </div>
             </div>
-            <div class="">
-                <label>category_id</label>
-                <input type="text" name="category_id" formControlName="category_id">
+            <div class="form-group">
+                <label>Category ID</label>
+                <input type="text" name="category_id" formControlName="category_id" class="form-control">
                 <div [hidden]="moneyFormGroup.get('category_id')?.valid || moneyFormGroup.get('category_id')?.pristine" class="alert alert-danger"> Category ID can not be empty
                 </div>
             </div>
-            <div class="">
-                <label>Amount</label>
-                <input type="text" name="amount" formControlName="amount">
+            <div class="form-group">
+                <label>Expense Amount</label>
+                <input type="text" name="amount" formControlName="amount" class="form-control">
                 <div [hidden]="moneyFormGroup.get('amount')?.valid || moneyFormGroup.get('amount')?.pristine" class="alert alert-danger"> Amount cannot be empty
                 </div>
             </div>
-            <div class="">
+            <div class="form-group">
                 <label>Description</label>
-                <input type="text" name="description" formControlName="description">
+                <input type="text" name="description" formControlName="description" class="form-control">
                 <div [hidden]="moneyFormGroup.get('description')?.valid || moneyFormGroup.get('description')?.pristine" class="alert alert-danger"> Description cannot be empty
                 </div>
             </div>
-
+            <button class="btn btn-secondary" style="margin-right:20px;" routerLink="/dashboard">Back</button>
             <button type="submit" class="btn btn-success" [disabled]="!moneyFormGroup.valid">submit</button>
         </form>
     </div>
