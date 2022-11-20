@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Money } from 'src/model/money';
+import { ExpenseService } from '../service/expense.service';
 import { IncomeService } from '../service/income.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { IncomeService } from '../service/income.service';
 export class DashboardComponent implements OnInit {
   moneys: Money[] = [];
 
-  constructor(private incomeService: IncomeService) { }
+  constructor(private incomeService: IncomeService,
+    private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
     this.getIncomes();
@@ -20,9 +22,9 @@ export class DashboardComponent implements OnInit {
     this.incomeService.getIncomes().subscribe(a => this.moneys = a);
   }
 
-  // getExpenses(): void{
-    
-  // }
+  getExpenses(): void{
+    this.expenseService.getExpenses().subscribe(a => this.moneys = a);
+  }
 
 
 

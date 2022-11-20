@@ -4,14 +4,14 @@
         <form (ngSubmit)="onSubmit()" [formGroup]="moneyFormGroup">
             <div class="">
                 <label>income_date</label>
-                <input type="text" name="income_date" formControlName="income_date">
-                <div [hidden]="moneyFormGroup.get('income_date')?.valid || moneyFormGroup.get('income_date')?.pristine" class="alert alert-danger"> income_date cannot be empty
+                <input type="text" name="date" formControlName="date">
+                <div [hidden]="moneyFormGroup.get('date')?.valid || moneyFormGroup.get('date')?.pristine" class="alert alert-danger"> Date cannot be empty
                 </div>
             </div>
             <div class="">
-                <label>income_category_id</label>
-                <input type="text" name="income_category_id" formControlName="income_category_id">
-                <div [hidden]="moneyFormGroup.get('income_category_id')?.valid || moneyFormGroup.get('income_category_id')?.pristine" class="alert alert-danger"> income_category_id can not be empty
+                <label>Category ID</label>
+                <input type="text" name="category_id" formControlName="category_id">
+                <div [hidden]="moneyFormGroup.get('category_id')?.valid || moneyFormGroup.get('category_id')?.pristine" class="alert alert-danger"> Category ID can not be empty
                 </div>
             </div>
             <div class="">

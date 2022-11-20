@@ -19,8 +19,8 @@ export class IncomeComponent implements OnInit {
     private formBuilder: FormBuilder) 
     {
       this.moneyFormGroup = this.formBuilder.group({
-        income_date: new FormControl(''),
-        income_category_id: new FormControl(''),
+        date: new FormControl(''),
+        category_id: new FormControl(''),
         amount: new FormControl(0),
         description: new FormControl('')
       });
@@ -39,8 +39,8 @@ export class IncomeComponent implements OnInit {
   }
 
   addIncome(
-    income_date: string = this.moneyFormGroup.get('income_date')?.value,
-    income_category_id: number = this.moneyFormGroup.get('income_category_id')?.value,
+    date: string = this.moneyFormGroup.get('date')?.value,
+    category_id: number = this.moneyFormGroup.get('category_id')?.value,
     amount: string = this.moneyFormGroup.get('amount')?.value,
     description: string = this.moneyFormGroup.get('description')?.value
     ): void{

@@ -1,1 +1,33 @@
-<p>expense works!</p>
+<div>
+    <div [hidden]="submitted">
+        <h2>Add Expense</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="moneyFormGroup">
+            <div class="">
+                <label>date</label>
+                <input type="text" name="date" formControlName="date">
+                <div [hidden]="moneyFormGroup.get('date')?.valid || moneyFormGroup.get('date')?.pristine" class="alert alert-danger"> Date cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>category_id</label>
+                <input type="text" name="category_id" formControlName="category_id">
+                <div [hidden]="moneyFormGroup.get('category_id')?.valid || moneyFormGroup.get('category_id')?.pristine" class="alert alert-danger"> Category ID can not be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Amount</label>
+                <input type="text" name="amount" formControlName="amount">
+                <div [hidden]="moneyFormGroup.get('amount')?.valid || moneyFormGroup.get('amount')?.pristine" class="alert alert-danger"> Amount cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Description</label>
+                <input type="text" name="description" formControlName="description">
+                <div [hidden]="moneyFormGroup.get('description')?.valid || moneyFormGroup.get('description')?.pristine" class="alert alert-danger"> Description cannot be empty
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!moneyFormGroup.valid">submit</button>
+        </form>
+    </div>
+</div>
