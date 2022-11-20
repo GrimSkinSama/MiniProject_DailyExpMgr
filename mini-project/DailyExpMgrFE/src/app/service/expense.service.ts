@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Money } from 'src/model/money';
+import { Category, Money, Total } from 'src/model/money';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +10,12 @@ export class ExpenseService {
   private urlGetExpense: string = 'http://localhost:8080/expense/expenses';
   private urlGetExpenseByID: string = 'http://localhost:8080/expense/expense';
   private urlGetExpenseCategory: string = 'http://localhost:8080/expenseCategory/expenseCategories';
+  private urlGetExpenseCategoryByID: string = 'http://localhost:8080/expenseCategory/expenseCategory';
   private urlAddExpense: string = 'http://localhost:8080/expense/addExpense';
   private urlUpdateExpense: string = 'http://localhost:8080/expense/updateExpense';
   private urlDeleteExpense: string = 'http://localhost:8080/expense/deleteExpense';
+  private urlGetTotalExpense: string = 'http://localhost:8080/expense/totalExpense';
+
 
   constructor(private http:HttpClient) { }
   httpOptions = {
@@ -21,6 +24,19 @@ export class ExpenseService {
 
   getExpenses():Observable<Money[]>{
     return this.http.get<Money[]>(this.urlGetExpense);
+  }
+
+  getExpenseCategories(): Observable<Category[]>{
+    return this.http.get<Category[]>(this.urlGetExpenseCategory);
+  }
+
+  getExpenseCategory(id:number): Observable<Category>{
+    const urlByID = `${this.urlGetExpenseCategoryByID}/${id}`
+    return this.http.get<Category>(urlByID);
+  }
+
+  getTotalExpense(){
+    return this.http.get<Total>(this.urlGetTotalExpense);
   }
 
   getExpense(id:number): Observable<Money>{

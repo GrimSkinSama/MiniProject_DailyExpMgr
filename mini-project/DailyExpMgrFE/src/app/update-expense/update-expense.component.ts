@@ -36,6 +36,7 @@ export class UpdateExpenseComponent implements OnInit {
 
   ngOnInit(): void {
     this.submitted=false;
+    this.getExpenses();
   }
 
   onSubmit(){

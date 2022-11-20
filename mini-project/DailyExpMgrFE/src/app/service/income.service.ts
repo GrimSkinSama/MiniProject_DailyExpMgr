@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Money,Category } from 'src/model/money';
+import { Money,Category, Total } from 'src/model/money';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ export class IncomeService {
   private urlAddIncome: string = 'http://localhost:8080/income/addIncome';
   private urlUpdateIncome: string = 'http://localhost:8080/income/updateIncome';
   private urlDeleteIncome: string = 'http://localhost:8080/income/deleteIncome';
+  private urlGetTotalIncome: string = 'http://localhost:8080/income/totalIncome';
 
   constructor(private http:HttpClient) { }
   httpOptions = {
@@ -35,8 +36,12 @@ export class IncomeService {
   }
 
   getIncomeCategory(id:number): Observable<Category>{
-    const urlByID = `${this.urlGetIncomeByID}/${id}`
+    const urlByID = `${this.urlGetIncomeCategoryByID}/${id}`
     return this.http.get<Category>(urlByID);
+  }
+
+  getTotalIncome(){
+    return this.http.get<Total>(this.urlGetTotalIncome);
   }
 
   addIncome(money:Money): Observable<Money>{

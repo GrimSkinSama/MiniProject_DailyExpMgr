@@ -35,6 +35,7 @@ export class UpdateIncomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.submitted=false;
+    this.getIncomes();
   }
 
   onSubmit(){
