@@ -23,6 +23,10 @@ public class IncomeController {
     public Income findById(@PathVariable("id") int id){ return incomeRepository.findIncomeById(id);}
 
 
+    @GetMapping("/totalIncome")
+    public Integer getIncomeTotal(){ return incomeRepository.getTotalIncome(); }
+
+
     @PostMapping("/addIncome")
     public Income addIncome(@RequestBody Income income){
         //Perlu ditambahkan validasi ketika data masih kosong, maka income_balance akan otomatis 0

@@ -22,7 +22,10 @@ public class Expense {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "expense_date")
-    private LocalDate expense_date;
+    private LocalDate date;
+
+    @Column(name = "expense_category_id")
+    private int category_id;
 
     public int getId() {
         return id;
@@ -48,11 +51,19 @@ public class Expense {
         this.description = description;
     }
 
-    public LocalDate getExpense_date() {
-        return expense_date;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setExpense_date(LocalDate expense_date) {
-        this.expense_date = expense_date;
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
     }
 }

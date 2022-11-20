@@ -19,6 +19,9 @@ public class ExpenseController {
         return expenseRepository.findAll();
     }
 
+    @GetMapping("/totalExpense")
+    public Integer getExpenseTotal(){ return expenseRepository.getTotalExpense(); }
+
     @GetMapping("/expense/{id}")
     public Expense findById(@PathVariable("id") int id){
         return expenseRepository.findExpenseById(id);

@@ -4,11 +4,14 @@ import miniproject.bca.co.id.DailyExpenseManager.model.User;
 import miniproject.bca.co.id.DailyExpenseManager.model.UserDetail;
 import miniproject.bca.co.id.DailyExpenseManager.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-public class UserDetailService implements UserDetailsService {
+public class UserDetailService
+        implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;

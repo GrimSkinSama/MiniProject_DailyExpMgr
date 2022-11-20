@@ -20,7 +20,7 @@ public class Income {
     private IncomeCategory incomeCategory;*/
 
     @Column(name = "income_category_id")
-    private int income_category_id;
+    private int category_id;
 
     @Column(name = "amount")
     private double amount;
@@ -30,10 +30,10 @@ public class Income {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "income_date")
-    private LocalDate income_date;
+    private LocalDate date;
 
-    @Column(name = "income_balance")
-    private double income_balance;
+//    @Column(name = "income_balance")
+//    private double income_balance;
 
     public int getId() {
         return id;
@@ -43,12 +43,12 @@ public class Income {
         this.id = id;
     }
 
-    public int getIncome_category_id() {
-        return income_category_id;
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public void setIncome_category_id(int income_category_id) {
-        this.income_category_id = income_category_id;
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
     }
 
     public double getAmount() {
@@ -67,19 +67,19 @@ public class Income {
         this.description = description;
     }
 
-    public LocalDate getIncome_date() {
-        return income_date;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setIncome_date(LocalDate income_date) {
-        this.income_date = income_date;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public double getIncome_balance() {
-        return income_balance;
-    }
-
-    public void setIncome_balance(double income_balance) {
-        this.income_balance = income_balance;
-    }
+//    public double getIncome_balance() {
+//        return income_balance;
+//    }
+//
+//    public void setIncome_balance(double income_balance) {
+//        this.income_balance = income_balance;
+//    }
 }
