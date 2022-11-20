@@ -9,7 +9,8 @@ import { Money } from 'src/model/money';
 export class IncomeService {
 
   private urlGetIncome: string = 'http://localhost:8080/income/incomes';
-  private urlGetIncomeCategory: string = 'http://localhost:3006/freelancers';
+  private urlGetIncomeByID: string = 'http://localhost:8080/income/income';
+  private urlGetIncomeCategory: string = 'http://localhost:8080/incomeCategory/incomeCategories';
   private urlAddIncome: string = 'http://localhost:8080/income/addIncome';
   private urlUpdateIncome: string = 'http://localhost:8080/income/updateIncome/1';
 
@@ -20,14 +21,14 @@ export class IncomeService {
     headers: new HttpHeaders({'Content-type':'application/json'})
   }
 
-  getPartners():Observable<Money[]>{
+  getIncomes():Observable<Money[]>{
     return this.http.get<Money[]>(this.urlGetIncome);
   }
 
-  // getPartner(id:number): Observable<Partner>{
-  //   const urlByID = `${this.url}/${id}`
-  //   return this.http.get<Partner>(urlByID);
-  // }
+  getIncome(id:number): Observable<Money>{
+    const urlByID = `${this.urlGetIncomeByID}/${id}`
+    return this.http.get<Money>(urlByID);
+  }
 
   addIncome(money:Money): Observable<Money>{
     return this.http.post<Money>(this.urlAddIncome, money, this.httpOptions);

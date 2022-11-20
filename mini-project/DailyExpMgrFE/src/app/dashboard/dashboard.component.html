@@ -1,4 +1,11 @@
 <h2>Welcome to Daily Expense Manager</h2>
 <!-- put data here -->
+<div *ngFor="let income of incomes">
+    <p>{{income.income_category_id}}</p>
+    <p>{{income.amount}}</p>
+    <p>{{income.description}}</p>
+    <p>{{income.income_date}}</p>
+</div>
+
 <button routerLink="/add-income">Add Income</button>
 <button routerLink="/add-expense">Add Expense</button>

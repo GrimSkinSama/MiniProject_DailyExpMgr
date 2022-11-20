@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Form,FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Money, MoneyModel } from 'src/model/money';
 import { IncomeService } from '../service/income.service';
 
@@ -16,7 +16,8 @@ export class IncomeComponent implements OnInit {
 
   constructor(
     private incomeServices: IncomeService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder) 
+    {
       this.moneyFormGroup = this.formBuilder.group({
         date: new FormControl(''),
         category: new FormControl(''),
@@ -25,7 +26,7 @@ export class IncomeComponent implements OnInit {
       });
   }
 
-  moneyModel = new MoneyModel('','',0,'');
+  moneyModel = new MoneyModel(0,0,'','');
   submitted = false;
 
   ngOnInit(): void {

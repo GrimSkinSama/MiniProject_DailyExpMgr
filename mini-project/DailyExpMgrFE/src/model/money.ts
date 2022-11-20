@@ -1,16 +1,16 @@
 export interface Money {
     id: number;
-    date: string;
-    category: string;
+    income_category_id:number;
     amount: number;
-    notes: string
+    description: string;
+    income_date: string;
 }
 
 export class MoneyModel {
     constructor(
-      public date: string,
-      public category: string,
+      public income_category_id:number,
       public amount: number,
-      public notes: string
+      public description: string,
+      public income_date: string,
     ){ }
 }
