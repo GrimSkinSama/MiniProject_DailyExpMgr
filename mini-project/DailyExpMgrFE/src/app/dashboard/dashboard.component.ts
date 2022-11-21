@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit {
   categories: Category[] = [];
 
   totalinc: Total | undefined;
-  totalexp: Total|undefined;
+  totalexp: Total | undefined;
+
 
   constructor(
     private incomeService: IncomeService,
@@ -69,7 +70,9 @@ export class DashboardComponent implements OnInit {
   getTotalExpenses(): void{
     this.expenseService.getTotalExpense().subscribe(a => this.totalexp = a);
   }
-
-
-
+    
 }
+
+
+
+

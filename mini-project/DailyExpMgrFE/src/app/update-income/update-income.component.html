@@ -36,8 +36,8 @@
                 <div [hidden]="moneyFormGroup.get('description')?.valid || moneyFormGroup.get('description')?.pristine" class="alert alert-danger"> Description cannot be empty
                 </div>
             </div>
-            <button class="btn btn-secondary" style="margin-right:20px;" routerLink="/dashboard">Back</button>
-            <button type="submit" class="btn btn-success" [disabled]="!moneyFormGroup.valid">Submit</button>
+            <button class="btn btn-secondary" style="margin-right:20px;" (click)="canceled()" routerLink="/dashboard">Cancel</button>
+            <button type="submit" class="btn btn-success" [disabled]="!moneyFormGroup.valid">Submit Changes</button>
         </form>
     </div>
 </div>

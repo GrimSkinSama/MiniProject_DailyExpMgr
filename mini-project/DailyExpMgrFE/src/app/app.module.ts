@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateIncomeComponent } from './update-income/update-income.component';
 import { UpdateExpenseComponent } from './update-expense/update-expense.component';
+import { CurrencyPipe } from './pipe/currency.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdateExpenseComponent } from './update-expense/update-expense.componen
     IncomeComponent,
     ExpenseComponent,
     UpdateIncomeComponent,
-    UpdateExpenseComponent
+    UpdateExpenseComponent,
+    CurrencyPipe
   ],
   imports: [
     BrowserModule,
