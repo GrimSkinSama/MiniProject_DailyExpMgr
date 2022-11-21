@@ -37,7 +37,7 @@ export class CategoriesComponent implements OnInit {
     for(let i=0;i<this.incomeCategories.length;i++){
       if(this.incomeCategories.at(i)?.id == id){
         alert("Cannot Be Deleted because it is used");
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['list-categories']);
         return;
       }
     }
@@ -48,6 +48,13 @@ export class CategoriesComponent implements OnInit {
   }
 
   deleteExpenseCategory(id:number):void{
+    for(let i=0;i<this.expenseCategories.length;i++){
+      if(this.expenseCategories.at(i)?.id == id){
+        alert("Cannot Be Deleted because it is used");
+        this.router.navigate(['list-categories']);
+        return;
+      }
+    }
     this.expenseService.deleteExpense(id).subscribe(() => {
       this.router.navigate(['../dashboard']);
     });
