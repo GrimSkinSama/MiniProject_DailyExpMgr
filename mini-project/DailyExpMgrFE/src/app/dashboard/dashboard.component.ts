@@ -10,9 +10,6 @@ import { IncomeService } from '../service/income.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  // moneys: Money[] = [];
-  // moneyModel: MoneyModel | undefined;
-  // isIncome: string = '';
   incomes: Money[] = [];
   expenses: Money[]= [];
 
@@ -20,7 +17,6 @@ export class DashboardComponent implements OnInit {
 
   totalinc: Total | undefined;
   totalexp: Total | undefined;
-
 
   constructor(
     private incomeService: IncomeService,

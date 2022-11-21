@@ -56,9 +56,6 @@ export class UpdateIncomeComponent implements OnInit {
   }
 
   updateIncome(
-    date: string = this.moneyFormGroup.get('date')?.value,
-    category_id: number = this.moneyFormGroup.get('category_id')?.value,
-    amount: string = this.moneyFormGroup.get('amount')?.value,
     description: string = this.moneyFormGroup.get('description')?.value
     ): void{
       description = description.trim();

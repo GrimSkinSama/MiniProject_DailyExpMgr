@@ -1,0 +1,25 @@
+<div class="container inc-head">
+    <nav class="navbar">
+        
+        <span class="">
+            <button class="btn btn-primary" style="float: left; margin-top: 2%;" routerLink="/dashboard">< Back to Dashboard</button>
+            <h2 style="display: inline-block;">Welcome to Daily Expense Manager</h2>
+            <button class="btn btn-secondary" style="margin-left: 5%;" routerLink="">Logout</button>     
+        </span>
+    </nav>
+</div>
+
+<div class="container xls">
+    <div class="add-expc-wrapper">
+        <div>
+            <h2>Update Expense Category</h2>
+            <hr>
+            <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+                <input type="text" name="category_name" formControlName="category_name" style="width:50%; margin-right: 5%;" required>
+                <button class="btn btn-secondary" style="margin-right:20px;" (click)="canceled()" routerLink="/list-categories">Cancel</button>
+                <button type="submit" class="btn btn-success" [disabled]="!formGroup.valid">Submit Expense Category</button>
+            </form>
+        </div>
+    </div>
+</div>
+

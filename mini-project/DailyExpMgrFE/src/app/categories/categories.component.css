@@ -1,0 +1,113 @@
+.inc-head{
+    margin-bottom: 1%;
+    /* border: 1px solid black; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    background-color: rgba(133, 255, 188, 0.301);
+}
+
+.inc-head button{
+    border: 2px solid rgb(122, 122, 122);
+}
+
+.inc-head button:hover{
+    background-color: rgb(119, 105, 202);
+    color:white;
+}
+
+
+table{
+    width: 100%;
+    font-size: large;
+}
+
+tr{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+}
+
+.to-update{
+    cursor:pointer;
+}
+
+.to-update:hover{
+    background-color: bisque;
+    cursor: pointer;
+}
+
+i:hover{
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding:2px;
+    padding-left: 35px;
+    padding-right:35px;
+    background-color: rgb(255, 110, 110);
+}
+
+.expp{
+    background-color: rgb(96, 165, 255);
+    padding: 5px;
+    width: 35%;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.expp-out{
+    /* background-color: rgb(234, 236, 255); */
+    border: 3px solid rgb(195, 211, 255);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.incc{
+    background-color: rgb(96, 165, 255);
+    padding: 5px;
+    width: 35%;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.incc-out{
+    /* background-color: rgb(234, 236, 255); */
+    border: 3px solid rgb(195, 211, 255);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.mb-15{
+    margin-bottom: 3%;
+}
+
+
+.incc-head{
+    /* border: 1px solid black; */
+    padding-left: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.incc-head button{
+    margin-top: 1%;
+    float: right;
+
+}
+
+
+.expp-head{
+    /* border: 1px solid black; */
+    padding-left: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.expp-head button{
+    margin-top: 1%;
+    float: right
+}

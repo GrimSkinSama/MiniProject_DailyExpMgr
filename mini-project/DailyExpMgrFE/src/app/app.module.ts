@@ -12,6 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateIncomeComponent } from './update-income/update-income.component';
 import { UpdateExpenseComponent } from './update-expense/update-expense.component';
 import { CurrencyPipe } from './pipe/currency.pipe';
+import { UpdateCategoriesExpenseComponent } from './update-categories-expense/update-categories-expense.component';
+import { RouterModule } from '@angular/router';
+import { CategoriesComponent } from './categories/categories.component';
+import { AddIncomeCategoriesComponent } from './add-income-categories/add-income-categories.component';
+import { AddExpenseCategoriesComponent } from './add-expense-categories/add-expense-categories.component';
+import { UpdateCategoriesIncomeComponent } from './update-categories-income/update-categories-income.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +26,18 @@ import { CurrencyPipe } from './pipe/currency.pipe';
     LoginComponent,
     IncomeComponent,
     ExpenseComponent,
+    CategoriesComponent,
     UpdateIncomeComponent,
     UpdateExpenseComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    UpdateCategoriesIncomeComponent,
+    UpdateCategoriesExpenseComponent,
+    AddIncomeCategoriesComponent,
+    AddExpenseCategoriesComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
